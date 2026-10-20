@@ -44,6 +44,28 @@ mcp-doctor --url https://example.com/mcp
 mcp-doctor --json
 ```
 
+## CLI
+
+```
+mcp-doctor — Health check for MCP servers.
+
+USAGE
+  mcp-doctor                          read ~/.config/opencode/opencode.jsonc
+  mcp-doctor --url https://host/mcp   probe one remote server
+  mcp-doctor --cmd "npx -y server"    probe one stdio server
+
+COMMANDS / OPTIONS
+  --config <path>  config file to read
+  --url <url>      probe a single remote MCP server
+  --cmd <command>  probe a single stdio MCP server
+  --timeout <ms>   handshake timeout (default 15000)
+  --json           machine-readable output
+
+Exit code 1 when at least one server is broken.
+
+MIT · https://github.com/rustemmustafingovua-byte
+```
+
 ## Part of a portfolio
 
 | Project | What it does |
