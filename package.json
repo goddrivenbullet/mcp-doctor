@@ -1,0 +1,47 @@
+{
+  "name": "mcp-doctor",
+  "version": "0.1.0",
+  "description": "MCP servers break silently: a wrong command, an expired key, a moved URL \u2014 and your agent just stops calling tools. mcp-doctor probes every server you configured, lists its tools, measures latency and tells you exactly what broke and how to fix it.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "mcp-doctor": "bin/mcp-doctor.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "debugging",
+    "devtools",
+    "opencode",
+    "claude-code",
+    "agents",
+    "healthcheck"
+  ],
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "lint": "node --check src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rustemmustafingovua-byte/mcp-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rustemmustafingovua-byte/mcp-doctor/issues"
+  },
+  "homepage": "https://github.com/rustemmustafingovua-byte/mcp-doctor",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  }
+}
