@@ -12,6 +12,19 @@ import { homedir } from "node:os"
 import { join } from "node:path"
 import { doctor, normalizeServer } from "../src/index.js"
 
+// --- CLI shell: --help / --version -------------------------------------------
+const HELP = "mcp-doctor — Health check for MCP servers.\n\nUSAGE\n  mcp-doctor                          read ~/.config/opencode/opencode.jsonc\n  mcp-doctor --url https://host/mcp   probe one remote server\n  mcp-doctor --cmd \"npx -y server\"    probe one stdio server\n\nCOMMANDS / OPTIONS\n  --config <path>  config file to read\n  --url <url>      probe a single remote MCP server\n  --cmd <command>  probe a single stdio MCP server\n  --timeout <ms>   handshake timeout (default 15000)\n  --json           machine-readable output\n\nExit code 1 when at least one server is broken.\n\nMIT · https://github.com/rustemmustafingovua-byte"
+const VERSION = "0.1.0"
+if (process.argv.includes("--help") || process.argv.includes("-h")) {
+  console.log(HELP)
+  process.exit(0)
+}
+if (process.argv.includes("--version") || process.argv.includes("-V")) {
+  console.log(VERSION)
+  process.exit(0)
+}
+
+
 const argv = process.argv.slice(2)
 const arg = (name) => {
   const i = argv.indexOf(name)
