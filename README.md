@@ -26,6 +26,14 @@ MCP servers break silently: a wrong command, an expired key, a moved URL — and
 npm i -g mcp-doctor
 ```
 
+<details>
+<summary>Без npm-логина — из tarball релиза</summary>
+
+```bash
+npm i -g https://github.com/rustemmustafingovua-byte/mcp-doctor/releases/download/v0.1.0/mcp-doctor-0.1.0.tgz
+```
+
+</details>
 ## What it does
 
 | | |
